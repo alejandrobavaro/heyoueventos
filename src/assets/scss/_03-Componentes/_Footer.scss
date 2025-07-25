@@ -109,6 +109,35 @@
   }
 }
 
+/* Botones de galerías */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  .footer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    .footer-link-icon {
+      font-size: 1.4rem;
+      color: #FFD740;
+    }
+
+    &:hover {
+      color: #FFD740;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+
 /* ============ TABLET (768px+) ============ */
 @media (min-width: 768px) {
   .footer {

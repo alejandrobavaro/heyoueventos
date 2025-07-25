@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { 
+import { NavLink, useLocation } from "react-router-dom";
+import {
   BsList,
   BsHouseDoor,
   BsCameraFill,
   BsStarFill,
   BsFillPersonLinesFill,
   BsListTask,
-  BsCalendarEvent
+  BsCalendarEvent,
+  BsInfoCircle,
+  BsBuildings
 } from "react-icons/bs";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "../assets/scss/_03-Componentes/_Header.scss";
@@ -16,26 +18,39 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  const handleToggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const handleToggleMobileMenu = () =>
+    setIsMobileMenuOpen((prev) => !prev);
 
-  // Asignamos un color único a cada ícono
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
   const eventLinks = [
     { path: "/", icon: <BsHouseDoor />, label: "Inicio", color: "#FF5252" },
-    { path: "/galeria", icon: <BsCameraFill />, label: "Galería", color: "#FFD740" },
+    { path: "/nosotros", icon: <BsInfoCircle />, label: "Nosotros", color: "#7C4DFF" },
+    { path: "/salones", icon: <BsBuildings />, label: "Salones", color: "#00BFA5" },
     { path: "/testimonios", icon: <BsStarFill />, label: "Testimonios", color: "#FF9100" },
     { path: "/servicios", icon: <BsFillPersonLinesFill />, label: "Servicios", color: "#69F0AE" },
-    { path: "/planificacion", icon: <BsListTask />, label: "Planificación", color: "#40C4FF" },
-    { path: "/eventos", icon: <BsCalendarEvent />, label: "Eventos", color: "#E040FB" }
+    { path: "/contacto", icon: <BsFillPersonLinesFill />, label: "Contacto", color: "#F06292" },
   ];
+  
 
   return (
     <header className="heyou-header">
       <div className="header-accent"></div>
-      
-      <Navbar expand="lg" className="header-navbar">
+
+      <Navbar
+        expand="lg"
+        className="header-navbar"
+        expanded={isMobileMenuOpen}
+        onToggle={setIsMobileMenuOpen}
+      >
         <Container className="header-container">
           {/* Logo Heyou! */}
-          <Navbar.Brand as={Link} to="/" className="header-logo">
+          <Navbar.Brand
+            as={NavLink}
+            to="/"
+            className="header-logo"
+            onClick={closeMobileMenu}
+          >
             <img 
               src="/img/02-logos/logoheyoueventos.png" 
               alt="Heyou! Eventos"
@@ -55,21 +70,23 @@ const Header = () => {
 
           {/* Menú principal - siempre visible en desktop */}
           <Navbar.Collapse id="main-navbar" className="navbar-menu">
-            <Nav className="nav-links">
-              {eventLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
-                  style={{ "--icon-color": link.color }}
-                >
-                  <span className="nav-icon">{link.icon}</span>
-                  <span className="nav-label">{link.label}</span>
-                  <span className="nav-underline"></span>
-                </Link>
-              ))}
-            </Nav>
+          <Nav className="nav-links">
+            {eventLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                onClick={closeMobileMenu}
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                style={{ "--icon-color": link.color }}
+              >
+                <span className="nav-icon">{link.icon}</span>
+                <span className="nav-label">{link.label}</span>
+                <span className="nav-underline"></span>
+              </NavLink>
+            ))}
+          </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>

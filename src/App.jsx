@@ -18,39 +18,51 @@ import WhatsappFloat from "./components/WhatsappFloat";
 import MainHome from "./components/MainHome";
 import Contacto from "./components/Contacto";
 import GaleriaEventos from "./components/GaleriaEventos";
+import Testimonios from "./components/Testimonios"; 
+import Servicios from "./components/Servicios";
+
+import GaleriaSalones from "./components/GaleriaSalones";
+import Nosotros from "./components/Nosotros";
+import NuestrosSalones from "./components/NuestrosSalones";
 
 function App() {
   return (
     <Router>
-      {/* Contenedor principal de la aplicación */}
       <div className="app-container">
-        {/* Fondo decorativo con efectos */}
         <div className="app-background"></div>
-        
-        {/* Borde decorativo */}
         <div className="app-frame"></div>
-        
-        {/* Header de navegación */}
+
         <Header />
-        
-        {/* Contenido principal */}
+
         <main className="main-content">
-          {/* Wrapper para centrar el contenido */}
           <div className="content-wrapper">
             <Routes>
+              {/* Home */}
               <Route path="/" element={<MainHome />} />
               <Route path="/inicio" element={<MainHome />} />
+
+              {/* Nuevas páginas */}
+              <Route path="/nosotros" element={<Nosotros />} />
+              <Route path="/salones" element={<NuestrosSalones />} />
+              <Route path="/testimonios" element={<Testimonios />} />
+              <Route path="/servicios" element={<Servicios />} />
+             
+              <Route path="/galeriasalones" element={<GaleriaSalones />} />
+              <Route path="/galeriaeventos" element={<GaleriaEventos />} />
+
+              {/* Existentes */}
               <Route path="/contacto" element={<Contacto />} />
+
+              {/* Legacy / fallback */}
               <Route path="/galeria" element={<GaleriaEventos />} />
+
+              {/* 404 -> Home */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </div>
         </main>
-        
-        {/* Footer de la página */}
+
         <Footer />
-        
-        {/* Botón flotante de WhatsApp */}
         <WhatsappFloat />
       </div>
     </Router>

@@ -1,26 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../assets/scss/_03-Componentes/_Footer.scss";
-import { BsInstagram, BsYoutube, BsFacebook } from "react-icons/bs";
+import { BsInstagram, BsYoutube, BsFacebook, BsCameraFill, BsCalendarEvent } from "react-icons/bs";
 
 function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <footer className="footer">
       {/* Botón de contacto */}
       <div className="contact-btn-container">
-        <Link
-          to="/contacto"
-          className="contact-btn"
-          onClick={scrollToTop}
-        >
+        <Link to="/contacto" className="contact-btn" onClick={scrollToTop}>
           CONTACTO
+        </Link>
+      </div>
+
+      {/* Botones de Galerías */}
+      <div className="footer-links">
+        <Link to="/galeriasalones" onClick={scrollToTop} className="footer-link">
+          <BsCameraFill className="footer-link-icon" />
+          <span>Galería Salones</span>
+        </Link>
+        <Link to="/galeriaeventos" onClick={scrollToTop} className="footer-link">
+          <BsCalendarEvent className="footer-link-icon" />
+          <span>Galería Eventos</span>
         </Link>
       </div>
 

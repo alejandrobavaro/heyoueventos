@@ -1,128 +1,312 @@
-/* Estilos base - Mobile First */
-.eventos-destacados {
-  padding: 1rem;
-  background-color: rgba(20, 20, 30, 0.8); // Fondo con transparencia
-  color: white;
+/* ============ EVENTOS DESTACADOS - MOBILE FIRST ============ */
+.heyou-eventos-destacados {
+  padding: 2rem 1rem;
+  background-color: #14141E;
+  color: rgba(255, 255, 255, 0.9);
   font-family: 'Quicksand', sans-serif;
   
-  h2 {
-    font-weight: 600;
+  .section-header {
     text-align: center;
-    margin-bottom: 1.5rem;
-    color: white;
-  }
-}
-
-.eventos-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.evento-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-5px);
-  }
-}
-
-.evento-imagen {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.evento-info {
-  padding: 1rem;
-  
-  h3 {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: white;
-  }
-  
-  .evento-fecha {
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 0.75rem;
-    font-size: 0.9rem;
-  }
-  
-  p {
-    margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.5;
-  }
-}
-
-.evento-btn {
-  background-color: #FF5252;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  
-  &:hover {
-    background-color: #E040FB;
-  }
-}
-
-/* Tablet - 768px */
-@media (min-width: 768px) {
-  .eventos-destacados {
-    padding: 2rem;
+    margin-bottom: 2.5rem;
+    
+    h2 {
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: white;
+      margin-bottom: 0.5rem;
+      
+      .gradient-text {
+        background: linear-gradient(90deg, #FF5252, #FFD740, #40C4FF);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 6s ease infinite;
+      }
+    }
+    
+    .section-subtitle {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .icon-divider {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      
+      .icon-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        animation: bounce 1s ease infinite alternate;
+      }
+    }
   }
   
   .eventos-container {
-    gap: 2rem;
-  }
-  
-  .evento-card {
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .evento-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     
-    .evento-imagen {
-      width: 40%;
-      height: auto;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    
+    .media-container {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      
+      .evento-imagen {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      
+      .video-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 82, 82, 0.8);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        
+        svg {
+          width: 24px;
+          height: 24px;
+          fill: white;
+          margin-left: 3px;
+        }
+      }
+      
+      &:hover {
+        .evento-imagen {
+          transform: scale(1.05);
+        }
+        
+        .video-icon {
+          opacity: 1;
+        }
+      }
     }
     
     .evento-info {
-      width: 60%;
       padding: 1.5rem;
+      
+      h3 {
+        font-weight: 600;
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+        color: white;
+      }
+      
+      .evento-fecha {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+      
+      .evento-descripcion {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+      
+      .evento-actions {
+        display: flex;
+        gap: 1rem;
+        
+        .evento-btn {
+          background-color: #FF5252;
+          color: white;
+          border: none;
+          padding: 0.7rem 1.5rem;
+          border-radius: 30px;
+          font-family: 'Quicksand', sans-serif;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          flex: 1;
+          
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+          }
+        }
+        
+        .video-link {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 30px;
+          padding: 0.7rem 1.5rem;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.6);
+          }
+        }
+      }
+    }
+  }
+  
+  .cta-section {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem 1rem;
+    background: linear-gradient(90deg, rgba(20, 20, 30, 0.7), rgba(40, 40, 60, 0.7));
+    border-radius: 8px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    
+    .cta-button {
+      background: linear-gradient(90deg, #FF5252, #E040FB);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 82, 82, 0.3);
+      
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 16px rgba(255, 82, 82, 0.4);
+      }
     }
   }
 }
 
-/* Desktop - 1024px */
-@media (min-width: 1024px) {
-  .eventos-destacados {
+/* ============ ANIMACIONES ============ */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bounce {
+  to {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+/* ============ TABLET (768px+) ============ */
+@media (min-width: 768px) {
+  .heyou-eventos-destacados {
     padding: 3rem 2rem;
-  }
-  
-  .eventos-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-  }
-  
-  .evento-card {
-    flex-direction: column;
     
-    .evento-imagen {
-      width: 100%;
-      height: 250px;
+    .section-header {
+      h2 {
+        font-size: 2.2rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1.1rem;
+      }
     }
     
-    .evento-info {
-      width: 100%;
+    .evento-card {
+      display: flex;
+      
+      .media-container {
+        width: 45%;
+        height: auto;
+        min-height: 300px;
+      }
+      
+      .evento-info {
+        width: 55%;
+        padding: 2rem;
+      }
+    }
+  }
+}
+
+/* ============ DESKTOP (1024px+) ============ */
+@media (min-width: 1024px) {
+  .heyou-eventos-destacados {
+    padding: 4rem 2rem;
+    
+    .section-header {
+      margin-bottom: 3.5rem;
+      
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+    
+    .eventos-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+    
+    .evento-card {
+      flex-direction: column;
+      
+      .media-container {
+        width: 100%;
+        height: 280px;
+      }
+      
+      .evento-info {
+        width: 100%;
+      }
+    }
+    
+    .cta-section {
+      padding: 2.5rem;
+      
+      p {
+        font-size: 1.4rem;
+      }
+      
+      .cta-button {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.1rem;
+      }
     }
   }
 }

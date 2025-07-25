@@ -1,0 +1,434 @@
+.heyou-nosotros {
+    background-color: #14141E;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(224, 64, 251, 0.1) 0%, transparent 40%);
+      pointer-events: none;
+      z-index: 0;
+    }
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+  
+  .nosotros-hero {
+    height: 70vh;
+    min-height: 500px;
+    position: relative;
+    background: url('/img/nosotros/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(20, 20, 30, 0.7), rgba(20, 20, 30, 0.9));
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      
+      .title {
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
+        color: white;
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+        
+        span {
+          background: linear-gradient(90deg, #FFD740, #69F0AE);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+      }
+      
+      .lead {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.3rem;
+        line-height: 1.6;
+      }
+    }
+  }
+  
+  .historia-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 6rem 0;
+    
+    .historia-content {
+      h2 {
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .gradient-bar {
+        height: 4px;
+        width: 100px;
+        margin: 1.5rem 0 2rem;
+        background: linear-gradient(90deg, #FF5252, #FFD740, #FF9100, #69F0AE, #40C4FF, #E040FB);
+        border-radius: 2px;
+        animation: gradientShift 8s ease infinite;
+        background-size: 400% 100%;
+      }
+      
+      p {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+    }
+    
+    .historia-imagen {
+      border-radius: 16px;
+      overflow: hidden;
+    //   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+      
+      &:hover img {
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  .equipo-section {
+    padding: 4rem 0;
+    text-align: center;
+    
+    h2 {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+  }
+  
+  .equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .miembro-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    
+    .miembro-imagen {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 1.5rem;
+      position: relative;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .miembro-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(224, 64, 251, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        padding: 1.5rem;
+        text-align: center;
+        
+        p {
+          color: white;
+          font-size: 0.9rem;
+        }
+      }
+      
+      &:hover .miembro-overlay {
+        opacity: 1;
+      }
+    }
+    
+    h3 {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      color: white;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .rol {
+      color: #FFD740;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .salones-section {
+    padding: 6rem 0;
+    text-align: center;
+    
+    .salones-header {
+      max-width: 800px;
+      margin: 0 auto 4rem;
+      
+      h2 {
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .subtitle {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .gradient-bar {
+        height: 4px;
+        width: 150px;
+        margin: 0 auto;
+        background: linear-gradient(90deg, #FF5252, #FFD740, #FF9100, #69F0AE, #40C4FF, #E040FB);
+        border-radius: 2px;
+        animation: gradientShift 8s ease infinite;
+        background-size: 400% 100%;
+      }
+    }
+  }
+  
+  .salones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  .salon-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    
+    .salon-imagen {
+      height: 250px;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+    }
+    
+    &:hover {
+      .salon-imagen img {
+        transform: scale(1.1);
+      }
+    }
+    
+    .salon-info {
+      padding: 1.5rem;
+      
+      h3 {
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      p {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+      }
+      
+      .salon-ubicacion {
+        color: #69F0AE;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  
+  .video-section {
+    padding: 6rem 0;
+    text-align: center;
+    
+    h2 {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .gradient-bar {
+      height: 4px;
+      width: 150px;
+      margin: 0 auto 3rem;
+      background: linear-gradient(90deg, #FF5252, #FFD740, #FF9100, #69F0AE, #40C4FF, #E040FB);
+      border-radius: 2px;
+      animation: gradientShift 8s ease infinite;
+      background-size: 400% 100%;
+    }
+    
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    }
+  }
+  
+  .heyou-btn {
+    background: linear-gradient(to right, #FF5252, #E040FB);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(224, 64, 251, 0.3);
+    }
+  }
+  
+  /* Animaciones */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .historia-section {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 4rem 0;
+      
+      .historia-content {
+        order: 2;
+      }
+      
+      .historia-imagen {
+        order: 1;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+    
+    .nosotros-hero .hero-content .title {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nosotros-hero {
+      height: 60vh;
+      min-height: 400px;
+      
+      .hero-content .title {
+        font-size: 2rem;
+      }
+    }
+    
+    .equipo-grid, .salones-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .salones-grid {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nosotros-hero .hero-content .title {
+      font-size: 1.8rem;
+    }
+    
+    .historia-section {
+      padding: 3rem 0;
+    }
+    
+    .equipo-section, .salones-section, .video-section {
+      padding: 3rem 0;
+    }
+  }

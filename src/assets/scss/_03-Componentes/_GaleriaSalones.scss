@@ -1,0 +1,255 @@
+/* Estilos base - Mobile First */
+.heyou-galeria-salones {
+    padding: 1.5rem;
+    background-color: rgba(20, 20, 30, 0.95);
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    
+    .galeria-salones-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      
+      h2 {
+        font-weight: 600;
+        color: white;
+        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+        position: relative;
+        display: inline-block;
+        
+        &::after {
+          content: '';
+          display: block;
+          width: 50%;
+          height: 3px;
+          background: linear-gradient(90deg, #FF5252, #E040FB);
+          margin: 0.5rem auto 0;
+          border-radius: 3px;
+        }
+      }
+      
+      p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .galeria-salones-slider {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    
+    .slick-slider {
+      position: relative;
+    }
+    
+    .slick-list {
+      margin: 0 -10px;
+      padding: 20px 0;
+    }
+  }
+  
+  .salon-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      border-color: rgba(255, 82, 82, 0.3);
+      
+      .salon-btn {
+        background: linear-gradient(90deg, #FF5252, #E040FB);
+      }
+    }
+  }
+  
+  .salon-imagen-container {
+    height: 220px;
+    overflow: hidden;
+  }
+  
+  .salon-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    
+    .salon-card:hover & {
+      transform: scale(1.05);
+    }
+  }
+  
+  .salon-info {
+    padding: 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    
+    h3 {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: white;
+    }
+    
+    .salon-datos {
+      margin-bottom: 1rem;
+      flex-grow: 1;
+      
+      p {
+        margin: 0.3rem 0;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        
+        .salon-icono {
+          margin-right: 0.5rem;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  
+  .salon-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  /* Estilos para navegación del slider */
+  .slick-arrow {
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    
+    &::before {
+      color: #FF5252;
+      font-size: 2rem;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+    
+    &:hover::before {
+      opacity: 1;
+    }
+    
+    &.slick-prev {
+      left: -15px;
+    }
+    
+    &.slick-next {
+      right: -15px;
+    }
+  }
+  
+  .slick-dots {
+    bottom: -25px;
+    
+    li {
+      margin: 0 4px;
+      
+      button::before {
+        color: white;
+        opacity: 0.5;
+        font-size: 10px;
+        transition: all 0.3s ease;
+      }
+      
+      &.slick-active button::before {
+        color: #FF5252;
+        opacity: 1;
+        font-size: 12px;
+      }
+    }
+  }
+  
+  /* Tablet - 768px */
+  @media (min-width: 768px) {
+    .heyou-galeria-salones {
+      padding: 2rem 1.5rem;
+    }
+    
+    .galeria-salones-slider {
+      padding: 0 20px;
+    }
+    
+    .salon-imagen-container {
+      height: 250px;
+    }
+    
+    .slick-arrow {
+      &.slick-prev {
+        left: -20px;
+      }
+      
+      &.slick-next {
+        right: -20px;
+      }
+    }
+  }
+  
+  /* Desktop - 1024px */
+  @media (min-width: 1024px) {
+    .heyou-galeria-salones {
+      padding: 3rem 2rem;
+    }
+    
+    .galeria-salones-header {
+      h2 {
+        font-size: 2.2rem;
+      }
+      
+      p {
+        font-size: 1.1rem;
+      }
+    }
+    
+    .salon-imagen-container {
+      height: 280px;
+    }
+    
+    .slick-arrow {
+      width: 50px;
+      height: 50px;
+      
+      &::before {
+        font-size: 2.5rem;
+      }
+      
+      &.slick-prev {
+        left: -25px;
+      }
+      
+      &.slick-next {
+        right: -25px;
+      }
+    }
+    
+    .slick-dots {
+      bottom: -30px;
+    }
+  }
+  

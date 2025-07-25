@@ -1,20 +1,26 @@
-//------------GENERAL--------------//
-@import "./_01-General/_AppBodyEstilosGenerales";
-@import "./_01-General/_SweetAlert";
-@import "./_01-General/_Toastify";
+//------------ GENERAL --------------//
+@import "./_01-General/_App";
 
-//------------COMPONENTES ESTRUCTURALES--------------//
+
+//------------ COMPONENTES ESTRUCTURALES --------------//
 @import "./_03-Componentes/_Header";
 @import "./_03-Componentes/_Footer";
 @import "./_03-Componentes/_WhatsappFloat";
 
-//------------PÁGINA PRINCIPAL--------------//
+
+//------------ PÁGINA PRINCIPAL --------------//
 @import "./_03-Componentes/_HeroBanner";
 @import "./_03-Componentes/_MainHome";
 @import "./_03-Componentes/_EventosDestacados";
 @import "./_03-Componentes/_GaleriaEventos";
-@import "./_03-Componentes/_TestimoniosClientes";
-@import "./_03-Componentes/_CtaContacto";
+@import "./_03-Componentes/_Testimonios";
 
-//------------PÁGINAS SECUNDARIAS--------------//
+
+//------------ PÁGINAS SECUNDARIAS --------------//
+@import "./_03-Componentes/_Nosotros";
+@import "./_03-Componentes/_NuestrosSalones";
+@import "./_03-Componentes/_Servicios";
+@import "./_03-Componentes/_Planificacion";
+@import "./_03-Componentes/_GaleriaSalones";
 @import "./_03-Componentes/_Contacto";
+@import "./_03-Componentes/_CtaContacto";
