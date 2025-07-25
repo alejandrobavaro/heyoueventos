@@ -1,0 +1,157 @@
+/* Estilos base - Mobile First */
+.galeria-fotos {
+  padding: 1rem;
+  background-color: rgba(20, 20, 30, 0.8);
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden; /* Previene desbordamientos */
+  
+  .galeria-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    
+    h2 {
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+}
+
+.galeria-slider-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px; /* Padding lateral consistente */
+  
+  /* Estilos específicos del slider */
+  .slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+  }
+  
+  .slick-list {
+    overflow: hidden;
+    margin: 0 -10px; /* Compensa el padding de los slides */
+  }
+}
+
+.foto-container {
+  padding: 0 10px; /* Espacio entre slides */
+  height: 100%;
+}
+
+.foto-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    .foto-overlay {
+      opacity: 1;
+    }
+    transform: translateY(-5px);
+  }
+}
+
+.foto-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.foto-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 1rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.foto-categoria {
+  display: inline-block;
+  background-color: #FF5252;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Estilos para navegación del slider */
+.slick-arrow {
+  z-index: 1;
+  
+  &:before {
+    color: #FF5252;
+    font-size: 2rem;
+  }
+  
+  &.slick-prev {
+    left: -35px;
+  }
+  
+  &.slick-next {
+    right: -35px;
+  }
+}
+
+.slick-dots {
+  bottom: -30px;
+  
+  li {
+    margin: 0 3px;
+    
+    button:before {
+      color: white;
+      opacity: 0.5;
+      font-size: 10px;
+    }
+    
+    &.slick-active button:before {
+      color: #FF5252;
+      opacity: 1;
+    }
+  }
+}
+
+/* Tablet - 768px */
+@media (min-width: 768px) {
+  .galeria-fotos {
+    padding: 2rem;
+  }
+  
+  .galeria-slider-container {
+    padding: 0 30px;
+  }
+}
+
+/* Desktop - 1024px */
+@media (min-width: 1024px) {
+  .galeria-fotos {
+    padding: 3rem 2rem;
+  }
+  
+  .slick-dots {
+    bottom: -40px;
+  }
+  
+  .slick-arrow {
+    &.slick-prev {
+      left: -45px;
+    }
+    
+    &.slick-next {
+      right: -45px;
+    }
+  }
+}

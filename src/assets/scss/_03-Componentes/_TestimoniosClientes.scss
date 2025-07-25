@@ -1,0 +1,46 @@
+/* Estilos base - Mobile First */
+.testimonios-section {
+  padding: 1rem;
+  background-color: rgba(20, 20, 30, 0.8);
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  
+  h2 {
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+}
+
+.testimonios-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tablet - 768px */
+@media (min-width: 768px) {
+  .testimonios-section {
+    padding: 2rem;
+  }
+  
+  .testimonios-grid {
+    gap: 2rem;
+  }
+}
+
+/* Desktop - 1024px */
+@media (min-width: 1024px) {
+  .testimonios-section {
+    padding: 3rem 2rem;
+  }
+  
+  .testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}

@@ -1,0 +1,187 @@
+/* ============ NUEVA TIPOGRAFÍA ============ */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap');
+
+/* ============ HEADER - ESTILOS BASE ============ */
+.heyou-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(20, 20, 30, 0.98);
+  backdrop-filter: blur(8px);
+  font-family: 'Quicksand', sans-serif;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .header-accent {
+    height: 4px;
+    background: linear-gradient(90deg, 
+      #FF5252, #FFD740, #FF9100, #69F0AE, #40C4FF, #E040FB, #1DE9B6);
+    background-size: 400% 100%;
+    animation: gradientShift 12s ease infinite;
+  }
+
+  .header-navbar {
+    padding: 0.5rem 0;
+
+    .header-container {
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+
+  .header-logo {
+    padding: 0.5rem 0;
+    
+    .logo-image {
+      height: 50px;
+      width: auto;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+      
+      &:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+      }
+    }
+  }
+
+  .menu-toggle {
+    border: none;
+    background: transparent;
+    color: #FFD740;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .menu-icon {
+      font-size: 1.8rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .menu-label {
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+      font-weight: 600;
+    }
+
+    &:hover {
+      .menu-icon {
+        transform: rotate(90deg);
+        color: #FF5252;
+      }
+    }
+  }
+
+ .menu-toggle {
+    /* Estilos para el botón hamburguesa */
+    @media (min-width: 992px) {
+      display: none !important; /* Ocultar definitivamente en desktop */
+    }
+  }
+
+  .navbar-menu {
+    /* Menú siempre visible en desktop */
+    @media (min-width: 992px) {
+      display: flex !important;
+      flex-basis: auto;
+    }
+  }
+
+
+  .navbar-menu {
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0;
+
+      .nav-link {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        padding: 0.8rem 1.5rem;
+        margin: 0.2rem 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+        position: relative;
+
+        .nav-icon {
+          margin-right: 0.8rem;
+          font-size: 1.3rem;
+          color: var(--icon-color);
+          transition: all 0.3s ease;
+        }
+
+        .nav-underline {
+          position: absolute;
+          bottom: 0;
+          left: 1.5rem;
+          width: 0;
+          height: 3px;
+          background: var(--icon-color);
+          transition: all 0.3s ease;
+          border-radius: 3px;
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.05);
+          
+          .nav-icon {
+            transform: scale(1.2);
+          }
+          
+          .nav-underline {
+            width: calc(100% - 3rem);
+          }
+        }
+
+        &.active {
+          color: white;
+          
+          .nav-underline {
+            width: calc(100% - 3rem);
+            height: 4px;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ============ TABLET/DESKTOP ============ */
+@media (min-width: 992px) {
+  .heyou-header {
+    .header-navbar {
+      .navbar-menu {
+        .nav-links {
+          flex-direction: row;
+          padding: 0;
+          
+          .nav-link {
+            padding: 1.5rem 1.2rem;
+            margin: 0;
+            
+            &:hover {
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ============ ANIMACIONES ============ */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

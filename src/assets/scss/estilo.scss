@@ -1,0 +1,20 @@
+//------------GENERAL--------------//
+@import "./_01-General/_AppBodyEstilosGenerales";
+@import "./_01-General/_SweetAlert";
+@import "./_01-General/_Toastify";
+
+//------------COMPONENTES ESTRUCTURALES--------------//
+@import "./_03-Componentes/_Header";
+@import "./_03-Componentes/_Footer";
+@import "./_03-Componentes/_WhatsappFloat";
+
+//------------PÁGINA PRINCIPAL--------------//
+@import "./_03-Componentes/_HeroBanner";
+@import "./_03-Componentes/_MainHome";
+@import "./_03-Componentes/_EventosDestacados";
+@import "./_03-Componentes/_GaleriaEventos";
+@import "./_03-Componentes/_TestimoniosClientes";
+@import "./_03-Componentes/_CtaContacto";
+
+//------------PÁGINAS SECUNDARIAS--------------//
+@import "./_03-Componentes/_Contacto";

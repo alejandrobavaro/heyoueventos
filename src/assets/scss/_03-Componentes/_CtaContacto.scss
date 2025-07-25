@@ -1,0 +1,66 @@
+/* ============ CTA CONTACTO - MOBILE FIRST ============ */
+
+.cta-section {
+    padding: 3rem 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, #e8b4bc, #d29b87);
+    color: #5a2a27;
+    
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: #5a2a27;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      border: 2px solid #5a2a27;
+      
+      &:hover {
+        background-color: transparent;
+        color: #5a2a27;
+      }
+    }
+  }
+  
+  /* ============ TABLET (768px+) ============ */
+  @media (min-width: 768px) {
+    .cta-section {
+      padding: 4rem 2rem;
+      
+      h2 {
+        font-size: 2.2rem;
+      }
+      
+      .cta-button {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+      }
+    }
+  }
+  
+  /* ============ DESKTOP (1024px+) ============ */
+  @media (min-width: 1024px) {
+    .cta-section {
+      padding: 5rem 2rem;
+      
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+  }
